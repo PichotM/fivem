@@ -793,7 +793,7 @@ static InitFunction initFunction([]()
 	{
 		auto vn = entity->syncTree->GetVehicleAppearance();
 
-		return vn ? vn->dirtLevel : 0;
+		return vn ? float(vn->dirtLevel) : 0;
 	}));
 
 	fx::ScriptEngine::RegisterNativeHandler("GET_VEHICLE_WHEEL_TYPE", makeEntityFunction([](fx::ScriptContext& context, const fx::sync::SyncEntityPtr& entity)
@@ -1055,7 +1055,7 @@ static InitFunction initFunction([]()
 
 	fx::ScriptEngine::RegisterNativeHandler("NETWORK_GET_VOICE_PROXIMITY_OVERRIDE_FOR_PLAYER", MakePlayerEntityFunction([](fx::ScriptContext& context, const fx::sync::SyncEntityPtr& entity)
 	{
-		float position[3];
+		\ position[3];
 		auto pn = entity->syncTree->GetPlayerGameState();
 
 		scrVector resultVec = { 0 };
